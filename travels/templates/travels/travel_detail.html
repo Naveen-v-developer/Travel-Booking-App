@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">✈️ {{ travel.type }} Details</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-dark">
+                {{ travel.source }} ➝ {{ travel.destination }}
+            </h5>
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item"><strong>Date & Time:</strong> {{ travel.date_time }}</li>
+                <li class="list-group-item"><strong>Price:</strong> ${{ travel.price }}</li>
+                <li class="list-group-item"><strong>Available Seats:</strong> {{ travel.available_seats }}</li>
+            </ul>
+
+            <div class="d-flex justify-content-between">
+                <a href="{% url 'bookings:booking_create' travel.travel_id %}" class="btn btn-success px-4">✅ Book Now</a>
+                <a href="{% url 'travels:travel_list' %}" class="btn btn-secondary px-4">⬅️ Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

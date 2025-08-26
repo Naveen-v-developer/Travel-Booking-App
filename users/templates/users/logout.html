@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <!-- Logout Card -->
+            <div class="card shadow-lg border-0 rounded-3 text-center">
+                <div class="card-body p-5">
+                    <h2 class="text-danger mb-3">🚪 Logged Out</h2>
+                    <p class="lead text-muted">You have successfully logged out of your account.</p>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <a href="{% url 'users:login' %}" class="btn btn-primary">🔑 Login Again</a>
+                        <a href="{% url 'index' %}" class="btn btn-outline-secondary">🏠 Back to Home</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

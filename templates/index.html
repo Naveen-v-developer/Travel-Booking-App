@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Hero Section -->
+    <div class="text-center p-5 bg-light rounded shadow-lg">
+        <h1 class="display-4 fw-bold">✈️ Welcome to Travel Booking App</h1>
+        <p class="lead">Book your <strong>Flights</strong>, <strong>Trains</strong>, and <strong>Buses</strong> with ease and comfort.</p>
+        <a href="{% url 'travels:travel_list' %}" class="btn btn-primary btn-lg mt-3">Browse Travel Options</a>
+        <a href="{% url 'users:register' %}" class="btn btn-outline-secondary btn-lg mt-3">Create an Account</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row text-center mt-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4">
+                <h3>🛫 Flights</h3>
+                <p>Find affordable and comfortable flights to your favorite destinations.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4">
+                <h3>🚆 Trains</h3>
+                <p>Book train tickets for a relaxed and scenic journey.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4">
+                <h3>🚌 Buses</h3>
+                <p>Enjoy budget-friendly bus travel with multiple options.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+        <h2 class="fw-bold">Start Your Journey Today!</h2>
+        <p class="text-muted">Login or create an account to manage your bookings.</p>
+        <a href="{% url 'users:login' %}" class="btn btn-success btn-lg">Login</a>
+        <a href="{% url 'users:register' %}" class="btn btn-warning btn-lg">Register</a>
+    </div>
+
+</div>
+{% endblock %}

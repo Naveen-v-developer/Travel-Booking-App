@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <!-- Profile Card -->
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="mb-0">👤 My Profile</h3>
+                </div>
+
+                <div class="card-body p-4">
+                    <form method="post" class="needs-validation">
+                        {% csrf_token %}
+
+                        <!-- Render form fields with Bootstrap styling -->
+                        {% for field in form %}
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger small">{{ field.errors|join:", " }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                        <div class="d-grid">
+                            <button class="btn btn-success fw-semibold" type="submit">💾 Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="text-center mt-3">
+                <a href="{% url 'index' %}" class="btn btn-outline-secondary">⬅ Back to Home</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📌 My Bookings</h2>
+
+    {% if bookings %}
+        <div class="row">
+            {% for booking in bookings %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ booking.travel_option.type }} 
+                            <small class="text-muted">({{ booking.status }})</small>
+                        </h5>
+                        <p class="card-text">
+                            <strong>Route:</strong> {{ booking.travel_option.source }} → {{ booking.travel_option.destination }}<br>
+                            <strong>Date:</strong> {{ booking.booking_date|date:"M d, Y" }}<br>
+                            <strong>Seats:</strong> {{ booking.number_of_seats }}<br>
+                            <strong>Total Price:</strong> <span class="text-success">${{ booking.total_price }}</span>
+                        </p>
+                        <a href="{% url 'bookings:booking_detail' booking.booking_id %}" 
+                           class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center">
+            🚫 No bookings found. <a href="{% url 'travels:travel_list' %}" class="alert-link">Browse travel options</a> to book now!
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
