@@ -10,7 +10,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'ood4mk9cs154re29j4swbt6)+ks9v-^+_y7
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
 # Allowed hosts
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = ['travel-booking-app1-yh7w.onrender.com']
 
 # Installed apps
 INSTALLED_APPS = [
