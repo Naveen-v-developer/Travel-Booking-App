@@ -1,41 +1,63 @@
-# Travel Booking App
+# 🧳 Travel Booking App
 
-A simple Django web application for booking travel tickets (flight, train, bus).
+A simple Django web application for booking travel tickets (flight, train, bus).  
 
-## Features
+## ✨ Features
 
-- User registration, login, logout, profile management
-- View and filter travel options
-- Book tickets with seat selection
-- Manage and cancel bookings
-- Responsive Bootstrap 5 UI
+### 🔑 User Features
+- User registration, login, logout, and profile management  
+- View and filter travel options  
+- Book tickets with seat selection  
+- Manage and cancel bookings  
+- Responsive Bootstrap 5 UI  
 
-## Setup Instructions
+### 🛠️ Admin Features
+- Manage **Travel Options** (add, edit, delete flights, trains, buses)  
+- Manage **Users** (activate/deactivate accounts, update details)  
+- Manage **Bookings** directly via Django Admin  
+
+---
+
+## ⚙️ Setup Instructions
 
 1. **Clone the repository**  
-   `git clone <repo-url>`
+   ```bash
+   git clone <repo-url>
+   cd travel-booking-app
+   ```
 
 2. **Install requirements**  
-   `pip install -r requirements.txt`
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Configure MySQL database**  
-   Edit `travel_booking_app/settings.py` with your MySQL credentials.
+   Edit `travel_booking_app/settings.py` with your MySQL credentials.  
 
 4. **Apply migrations**  
-   `python manage.py migrate`
+   ```bash
+   python manage.py migrate
+   ```
 
-5. **Create superuser (optional)**  
-   `python manage.py createsuperuser`
+5. **Create superuser (for admin access)**  
+   ```bash
+   python manage.py createsuperuser
+   ```
 
 6. **Run the server**  
-   `python manage.py runserver`
+   ```bash
+   python manage.py runserver
+   ```
 
 7. **Open your browser**  
-   Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+   - App: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)  
+   - Admin Panel: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)  
 
-## MySQL Example Configuration
+---
 
-```
+## 🗄️ MySQL Example Configuration
+
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -48,15 +70,31 @@ DATABASES = {
 }
 ```
 
-## Running Tests
+---
 
-```
+## 🧪 Running Tests
+
+```bash
 python manage.py test
 ```
 
-## Deployment
+---
 
-- Use `python manage.py collectstatic` for static files.
-- Set `DEBUG = False` and configure `ALLOWED_HOSTS` in `settings.py`.
-- Use a production-ready WSGI server (e.g., Gunicorn, uWSGI).
+## 🚀 Deployment
 
+- Use `python manage.py collectstatic` for static files.  
+- Set `DEBUG = False` and configure `ALLOWED_HOSTS` in `settings.py`.  
+- Use a production-ready WSGI server (e.g., Gunicorn, uWSGI).  
+- Can be deployed on **Render, Railway, PythonAnywhere, AWS, or Heroku**.  
+
+---
+
+## 🏆 Evaluation Criteria
+
+- Backend functionality and Django best practices  
+- Frontend design, usability, responsiveness  
+- Code structure and quality  
+- MySQL integration  
+- Deployment (cloud readiness)  
+- Problem-solving skills and creativity  
+- Proper use of Django Admin for travel option & user management  
