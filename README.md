@@ -70,13 +70,6 @@ DATABASES = {
 }
 ```
 
----
-
-## 🧪 Running Tests
-
-```bash
-python manage.py test
-```
 
 ---
 
